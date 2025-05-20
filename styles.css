@@ -119,6 +119,7 @@ body, html {
 
 .main-section {
   padding: 0;
+  margin: 0;
   background: #f7f9fa;
 }
 
@@ -159,7 +160,7 @@ body, html {
 .policy-objectives {
   background: #f9fbfc;
   border-radius: 12px;
-  margin: 40px auto 0 auto;
+  margin: 0 auto;
   padding: 40px 40px 32px 40px;
   max-width: 900px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
@@ -1797,6 +1798,8 @@ body, html {
   font-size: 1.8rem;
   color: #222;
   margin-bottom: 18px;
+  word-wrap: break-word;
+  width: 100%;
 }
 .confidentiality-item::after {
   content: '';
@@ -1810,14 +1813,22 @@ body, html {
 @media (max-width: 1000px) {
   .confidentiality-cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    align-items: stretch;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 12px;
   }
+  
   .confidentiality-item {
     max-width: none;
     min-width: 0;
     flex: none;
+    padding: 24px 16px;
+  }
+
+  .confidentiality-text {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
   }
 }
 
