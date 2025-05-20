@@ -5,12 +5,11 @@ const tocBtn = document.getElementById('tocMenuBtn');
 
 function openSidebar() {
   sidebar.style.display = 'block';
-  // Use setTimeout to ensure display:block is applied before adding the open class
   setTimeout(() => {
     sidebar.classList.add('open');
     overlay.classList.add('show');
     hamburger.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
   }, 0);
 }
 
@@ -18,13 +17,12 @@ function closeSidebar() {
   sidebar.classList.remove('open');
   overlay.classList.remove('show');
   hamburger.classList.remove('active');
-  document.body.style.overflow = ''; // Restore scrolling
-  // Wait for the transition to complete before hiding the sidebar
+  document.body.style.overflow = '';
   setTimeout(() => {
     if (!sidebar.classList.contains('open')) {
       sidebar.style.display = 'none';
     }
-  }, 300); // Match this with the CSS transition duration
+  }, 300);
 }
 
 function toggleSidebar() {
@@ -39,7 +37,6 @@ function toggleSidebar() {
 hamburger.addEventListener('click', toggleSidebar);
 overlay.addEventListener('click', closeSidebar);
 
-// Close sidebar when clicking a link on mobile
 document.querySelectorAll('.sidebar nav ul li a').forEach(link => {
   link.addEventListener('click', () => {
     if (window.innerWidth <= 1000) {
@@ -48,14 +45,12 @@ document.querySelectorAll('.sidebar nav ul li a').forEach(link => {
   });
 });
 
-// Close sidebar when pressing Escape key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && sidebar.classList.contains('open')) {
     closeSidebar();
   }
 });
 
-// Handle window resize
 let resizeTimer;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);

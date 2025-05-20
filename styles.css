@@ -1,5 +1,6 @@
 body, html {
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #f7f9fa;
   color: #222;
@@ -10,6 +11,8 @@ body, html {
   display: flex;
   min-height: 100vh;
   max-width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
 .sidebar {
@@ -38,8 +41,11 @@ body, html {
 }
 
 .logo {
-  height: 32px;
+  height: 48px;
   margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .sidebar nav ul {
@@ -53,6 +59,7 @@ body, html {
   border-bottom: 1px solid #2c5a8a;
   font-weight: 500;
   cursor: pointer;
+  font-size: 0.9rem;
 }
 
 .sidebar nav ul > li ul {
@@ -64,7 +71,7 @@ body, html {
 
 .sidebar nav ul > li ul li {
   padding: 8px 0;
-  font-size: 15px;
+  font-size: 0.825rem;
   border: none;
   font-weight: 400;
 }
@@ -82,6 +89,8 @@ body, html {
   display: flex;
   flex-direction: column;
   max-width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
 .top-bar {
@@ -89,24 +98,27 @@ body, html {
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  padding: 10px 32px;
+  padding: 20px 32px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 15px;
+  margin: 0;
 }
 
 .contact-info span {
   margin-right: 24px;
   color: #184a7c;
+  font-size: 15px;
 }
 
 .social-icons i {
   margin-left: 16px;
   color: #184a7c;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .main-section {
-  padding: 32px 48px;
+  padding: 0;
   background: #f7f9fa;
 }
 
@@ -155,7 +167,7 @@ body, html {
 
 .policy-objectives h2 {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.26rem;
   font-weight: 700;
   margin-bottom: 8px;
   letter-spacing: 0.5px;
@@ -164,7 +176,7 @@ body, html {
 .policy-objectives .subtitle {
   text-align: center;
   color: #888;
-  font-size: 1.2rem;
+  font-size: 0.84rem;
   margin-bottom: 32px;
   border-bottom: 2px solid #7ed6f7;
   display: inline-block;
@@ -191,7 +203,7 @@ body, html {
   background: #e6f6fd;
   color: #1db6e4;
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.82rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -205,7 +217,7 @@ body, html {
   background: #e6f6fd;
   color: #222;
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   border-radius: 12px;
   padding: 2px 14px;
   margin-bottom: 4px;
@@ -214,7 +226,7 @@ body, html {
 .objective-item p {
   margin: 4px 0 0 0;
   color: #444;
-  font-size: 1.1rem;
+  font-size: 0.77rem;
   line-height: 1.6;
 }
 
@@ -223,6 +235,13 @@ body, html {
 }
 
 .scope-header h2 {
+  background: #1566bf;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 8px;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
   font-size: 1.8rem !important;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -244,10 +263,25 @@ body, html {
   padding: 0 0 0 18px;
 }
 
+.scope-card {
+  position: relative;
+  padding-top: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 18px;
+  padding: 32px 24px 24px 24px;
+  transition: box-shadow 0.2s;
+}
+.scope-card:not(:last-child) {
+  margin-bottom: 24px;
+}
+
 .scope-card-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  z-index: 2;
   min-width: 44px;
   min-height: 44px;
   background: #e6f6fd;
@@ -255,6 +289,9 @@ body, html {
   border-radius: 50%;
   font-size: 1.5rem;
   box-shadow: 0 1px 4px rgba(21,102,191,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .principal-governing {
@@ -592,7 +629,7 @@ body, html {
 }
 .confidential-arrow-text {
   color: #fff;
-  font-size: 1.08rem;
+  font-size: 1.25rem;
   font-weight: 500;
   text-align: left;
   flex: 1;
@@ -602,22 +639,39 @@ body, html {
   color: #222;
   text-align: right;
 }
+
 @media (max-width: 700px) {
   .confidential-arrows {
     gap: 18px;
+    padding: 0 12px;
   }
   .confidential-arrow {
     flex-direction: column !important;
     min-width: 0;
-    max-width: 98vw;
-    padding: 18px 8px !important;
+    width: 100%;
+    max-width: none;
+    padding: 24px !important;
+    background: #fff !important;
     clip-path: none !important;
+    border: none !important;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  .confidential-arrow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
   .confidential-arrow-icon {
     margin: 0 0 12px 0;
+    background: #e6f6fd;
   }
   .confidential-arrow-text {
     text-align: center !important;
+    font-size: 2.8rem;
+    color: #222 !important;
+  }
+  .confidential-title {
+    font-size: 4.2rem;
   }
 }
 
@@ -1085,7 +1139,7 @@ body, html {
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
 .grievance-timeframe-title {
-  font-size: 2rem;
+  font-size: 2.8rem;
   font-weight: 600;
   color: #444;
   margin-bottom: 32px;
@@ -1101,7 +1155,7 @@ body, html {
   max-width: 900px;
   border-collapse: collapse;
   margin-bottom: 32px;
-  font-size: 1.13rem;
+  font-size: 1.582rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 .grievance-timeframe-table th {
@@ -1109,7 +1163,7 @@ body, html {
   color: #fff;
   font-weight: 600;
   padding: 18px 0;
-  font-size: 1.18rem;
+  font-size: 1.652rem;
   border: none;
 }
 .grievance-timeframe-table td {
@@ -1117,7 +1171,7 @@ body, html {
   color: #222;
   padding: 16px 0;
   border: none;
-  font-size: 1.08rem;
+  font-size: 1.512rem;
 }
 .grievance-timeframe-table tr + tr td {
   border-top: 2px solid #fff;
@@ -1125,7 +1179,7 @@ body, html {
 .grievance-timeframe-note {
   background: #ffe3e3;
   color: #c0392b;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   font-weight: 500;
   border-radius: 6px;
   padding: 24px 18px;
@@ -1141,16 +1195,25 @@ body, html {
 .grievance-timeframe-note span {
   color: #e74c3c;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 2.1em;
   margin-right: 8px;
 }
 @media (max-width: 900px) {
   .grievance-timeframe-table, .grievance-timeframe-note {
     max-width: 98vw;
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
   .grievance-timeframe-title {
-    font-size: 1.3rem;
+    font-size: 1.82rem;
+  }
+  .grievance-timeframe-table th {
+    font-size: 1.4rem;
+  }
+  .grievance-timeframe-table td {
+    font-size: 1.4rem;
+  }
+  .grievance-timeframe-note {
+    font-size: 1.4rem;
   }
 }
 
@@ -1164,7 +1227,7 @@ body, html {
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
 .escalation-title {
-  font-size: 1.35rem;
+  font-size: 1.89rem;
   font-weight: 700;
   color: #444;
   margin-bottom: 8px;
@@ -1172,7 +1235,7 @@ body, html {
 }
 .escalation-subtitle {
   color: #888;
-  font-size: 1.08rem;
+  font-size: 1.512rem;
   margin-bottom: 12px;
 }
 .escalation-divider {
@@ -1205,7 +1268,7 @@ body, html {
 }
 .escalation-level-title {
   display: block;
-  font-size: 1.08rem;
+  font-size: 1.512rem;
   font-weight: 700;
   margin-bottom: 6px;
 }
@@ -1217,7 +1280,7 @@ body, html {
 }
 .escalation-level p {
   color: #444;
-  font-size: 1.05rem;
+  font-size: 1.47rem;
   margin: 0;
   font-weight: 400;
 }
@@ -1248,9 +1311,10 @@ body, html {
 
 .rbi-ombudsman-section {
   max-width: 1100px;
-  margin: 40px auto 40px auto;
-  padding: 0 0 0 0;
+  margin: 40px auto;
+  padding: 0 16px;
 }
+
 .rbi-ombudsman-card {
   background: linear-gradient(135deg, #3498fd 0%, #1566bf 100%);
   border-radius: 36px;
@@ -1258,18 +1322,23 @@ body, html {
   padding: 40px 32px 48px 32px;
   color: #fff;
   text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
+
 .rbi-ombudsman-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 10px;
   letter-spacing: 0.2px;
 }
+
 .rbi-ombudsman-subtitle {
   color: #eaf3fa;
-  font-size: 1.08rem;
+  font-size: 1.25rem;
   margin-bottom: 18px;
 }
+
 .rbi-ombudsman-divider {
   width: 120px;
   height: 3px;
@@ -1278,20 +1347,23 @@ body, html {
   border-radius: 2px;
   margin: 0 auto 32px auto;
 }
+
 .rbi-ombudsman-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 48px;
+  gap: 24px;
   margin-top: 0;
   flex-wrap: wrap;
 }
+
 .rbi-ombudsman-image {
   flex: 0 0 320px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .rbi-ombudsman-image img {
   width: 100%;
   max-width: 320px;
@@ -1299,38 +1371,97 @@ body, html {
   object-fit: cover;
   box-shadow: 0 2px 12px rgba(0,0,0,0.10);
 }
+
 .rbi-ombudsman-details {
   flex: 1 1 320px;
   text-align: left;
-  font-size: 1.18rem;
+  font-size: 1.3rem;
   color: #fff;
   display: flex;
   flex-direction: column;
   gap: 16px;
   justify-content: center;
 }
+
 .rbi-ombudsman-details-title {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 8px;
 }
+
 .rbi-ombudsman-details a {
   color: #fff;
   text-decoration: underline;
   word-break: break-all;
 }
-@media (max-width: 900px) {
+
+@media (max-width: 1000px) {
+  .rbi-ombudsman-card {
+    padding: 32px 24px;
+    border-radius: 24px;
+  }
+  
   .rbi-ombudsman-content {
     flex-direction: column;
-    gap: 24px;
-    align-items: stretch;
+    gap: 10px;
+    text-align: center;
   }
+  
   .rbi-ombudsman-image {
-    justify-content: flex-start;
-    margin-bottom: 12px;
+    flex: 0 0 auto;
   }
+  
+  .rbi-ombudsman-image img {
+    max-width: 280px;
+  }
+  
+  .rbi-ombudsman-details {
+    text-align: center;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+
+  .rbi-ombudsman-title {
+    font-size: 1.6rem;
+  }
+
+  .rbi-ombudsman-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .rbi-ombudsman-details-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .rbi-ombudsman-section {
+    padding: 0 12px;
+  }
+  
   .rbi-ombudsman-card {
-    padding: 24px 8px 32px 8px;
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+  
+  .rbi-ombudsman-title {
+    font-size: 1.5rem;
+  }
+  
+  .rbi-ombudsman-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .rbi-ombudsman-image img {
+    max-width: 240px;
+  }
+  
+  .rbi-ombudsman-details {
+    font-size: 1.25rem;
+  }
+
+  .rbi-ombudsman-details-title {
+    font-size: 1.35rem;
   }
 }
 
@@ -1341,7 +1472,7 @@ body, html {
   text-align: center;
 }
 .critical-complaints-title {
-  font-size: 1.35rem;
+  font-size: 3.3rem;
   font-weight: 700;
   color: #444;
   margin-bottom: 8px;
@@ -1349,7 +1480,7 @@ body, html {
 }
 .critical-complaints-subtitle {
   color: #888;
-  font-size: 1.08rem;
+  font-size: 1.95rem;
   margin-bottom: 12px;
 }
 .critical-complaints-divider {
@@ -1397,16 +1528,17 @@ body, html {
   align-items: flex-start;
 }
 .critical-complaint-content h3 {
-  font-size: 1.08rem;
+  font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 10px;
   color: #222;
 }
 .critical-complaint-content p {
   color: #444;
-  font-size: 1.01rem;
+  font-size: 1.05rem;
   line-height: 1.6;
-  margin: 0;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
 }
 .critical-complaint-content::after {
   content: '';
@@ -1417,15 +1549,59 @@ body, html {
   border-radius: 2px;
   margin: 18px 0 0 0;
 }
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #0056b3;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.read-more-btn:hover {
+  color: #003d82;
+  text-decoration: underline;
+}
 @media (max-width: 1000px) {
   .critical-complaints-cards {
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+    padding: 0 12px;
   }
+  
   .critical-complaint-card {
-    max-width: 98vw;
+    max-width: none;
     min-width: 0;
+    flex: 1;
+  }
+  
+  .critical-complaint-img {
+    height: 140px;
+  }
+  
+  .critical-complaint-content {
+    padding: 16px 12px 12px 12px;
+  }
+  
+  .critical-complaints-title {
+    font-size: 2.7rem;
+  }
+  
+  .critical-complaints-subtitle {
+    font-size: 1.7rem;
+  }
+  
+  .critical-complaint-content h3 {
+    font-size: 2.7rem;
+  }
+  
+  .critical-complaint-content p {
+    font-size: 1.65rem;
+  }
+  
+  .read-more-btn {
+    font-size: 1.3rem;
   }
 }
 
@@ -1436,7 +1612,7 @@ body, html {
   text-align: center;
 }
 .internal-reporting-title {
-  font-size: 1.35rem;
+  font-size: 1.65rem;
   font-weight: 700;
   color: #444;
   margin-bottom: 8px;
@@ -1444,7 +1620,7 @@ body, html {
 }
 .internal-reporting-subtitle {
   color: #888;
-  font-size: 1.08rem;
+  font-size: 0.975rem;
   margin-bottom: 12px;
 }
 .internal-reporting-divider {
@@ -1519,7 +1695,7 @@ body, html {
 }
 .internal-reporting-text {
   color: #444;
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   flex: 1;
 }
@@ -1527,7 +1703,7 @@ body, html {
   margin: 10px 0 0 18px;
   padding: 0 0 0 18px;
   color: #444;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 @media (max-width: 900px) {
   .internal-reporting-grid {
@@ -1561,14 +1737,14 @@ body, html {
   text-align: center;
 }
 .confidentiality-title {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 10px;
   letter-spacing: 0.2px;
 }
 .confidentiality-subtitle {
   color: #eaf3fa;
-  font-size: 1.08rem;
+  font-size: 1.95rem;
   margin-bottom: 18px;
 }
 .confidentiality-divider {
@@ -1618,7 +1794,7 @@ body, html {
   margin-bottom: 18px;
 }
 .confidentiality-text {
-  font-size: 1.05rem;
+  font-size: 1.8rem;
   color: #222;
   margin-bottom: 18px;
 }
@@ -1702,7 +1878,7 @@ body, html {
   text-align: left;
 }
 .review-mechanism-content h3 {
-  font-size: 1.18rem;
+  font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 10px;
   color: #222;
@@ -1730,7 +1906,7 @@ body, html {
   justify-content: center;
 }
 .public-disclosure-content h3 {
-  font-size: 1.18rem;
+  font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 10px;
   color: #222;
@@ -1849,10 +2025,10 @@ body, html {
   
   .sidebar {
     position: fixed;
-    left: -300px;
+    left: -50vw;
     top: 0;
     bottom: 0;
-    width: 300px;
+    width: 50vw;
     z-index: 999;
     transition: left 0.3s ease;
     box-shadow: 2px 0 8px rgba(0,0,0,0.1);
@@ -1875,38 +2051,127 @@ body, html {
   }
   
   .sidebar-header {
-    padding: 16px;
+    padding: 20px;
     background: #1a5a94;
   }
 
   .menu-btn {
-    display: none; /* Hide the table of content button in mobile */
+    display: none;
   }
 
   .logo {
-    margin: 0 auto; /* Center the logo in mobile */
+    margin: 0 auto;
+    height: 40px;
   }
 
   .sidebar nav ul > li {
-    padding: 14px 20px;
+    padding: 20px 24px;
+    font-size: 2.2rem;
   }
 
   .sidebar nav ul > li ul {
-    padding-left: 16px;
+    padding-left: 20px;
   }
 
   .sidebar nav ul > li ul li {
-    padding: 8px 0;
-  }
-
-  .scope-card h3 {
-    font-size: 1.4rem !important;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    padding: 12px 0;
+    font-size: 2rem;
   }
 }
 
 .policy-scope {
   margin: 40px auto 0 auto;
   max-width: 900px;
+}
+
+@media (max-width: 700px) {
+  .policy-objectives {
+    padding: 24px 8px 20px 8px;
+  }
+  .policy-objectives h2 {
+    font-size: 2.8rem;
+    margin-bottom: 14px;
+  }
+  .policy-objectives .subtitle {
+    font-size: 1.89rem;
+    margin-bottom: 24px;
+    padding-bottom: 6px;
+  }
+  .objective-title {
+    font-size: 3.2rem;
+    margin-bottom: 8px;
+    padding: 6px 12px;
+  }
+  .objective-item p {
+    font-size: 1.792rem;
+    margin-top: 8px;
+  }
+  .objective-item {
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.18rem;
+  }
+}
+
+.resolution-framework-content {
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.resolution-framework-content h3 {
+  font-size: 0.625rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.resolution-framework-content p {
+  color: #444;
+  font-size: 0.525rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.resolution-framework-content p.collapsed {
+  max-height: 4.8em;
+  overflow: hidden;
+}
+
+.resolution-framework-content .read-more-btn {
+  color: #3498fd;
+  background: none;
+  border: none;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.resolution-framework-content .read-more-btn:hover {
+  color: #1566bf;
+  text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+  .resolution-framework-content {
+    padding: 16px 12px 12px 12px;
+  }
+  
+  .resolution-framework-content h3 {
+    font-size: 2.7rem;
+  }
+  
+  .resolution-framework-content p {
+    font-size: 1.65rem;
+  }
+  
+  .resolution-framework-content .read-more-btn {
+    font-size: 1.3rem;
+  }
 }
