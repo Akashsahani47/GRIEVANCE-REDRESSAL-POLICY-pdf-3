@@ -110,6 +110,14 @@ body, html {
   margin: 0;
 }
 
+/* @media (max-width: 900px) {
+  .top-bar {
+    padding: 12px 16px;
+    height: 100px;
+    margin: 50px;
+  }
+} */
+
 .top-bar .logo {
   height: 40px;
   object-fit: contain;
@@ -1754,12 +1762,31 @@ body, html {
   }
 }
 
-.confidentiality-section {
-  max-width: 1100px;
+
+
+/* .confidentiality-section {
+  max-width: 1100px; 
+
   margin: 64px auto 64px auto;
   padding: 0 0 0 0;
   margin:30px
+}  */
+
+/* .confidentiality-section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 0 0 0;
+  text-align: center;
+} */
+
+.confidentiality-section img{
+  width: 100%;
+  /* max-width: 400px; */
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
 }
+
 .confidentiality-card {
   background: linear-gradient(135deg, #3498fd 0%, #1566bf 100%);
   border-radius: 28px;
