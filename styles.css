@@ -14,17 +14,25 @@ body, html {
 margin-top: 50px;
   }
 .one {
-  display: flex;        /* enables flexbox for horizontal alignment */
-  justify-content: center; /* centers horizontally */
-  align-items: center;  /* centers vertically */
-  gap: 5px;             /* gap between image and link */
+  display: flex;        
+  justify-content: center; 
+  align-items: center; 
+  gap: 5px;            
 }
 
 .one li {
-  list-style: none;     /* removes bullet */
-  display: flex;        /* makes li a flex container */
-  align-items: center;  /* vertically aligns items */
-  gap: 10px;             /* gap between image and link */
+  list-style: none;     
+  display: flex;        
+  align-items: center;  
+  gap: 10px;             
+}
+
+
+.onee {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  gap: 15px; /* Gap between the img and a */
 }
 
 .Oneee{
@@ -103,8 +111,8 @@ hr {
 }
 
 .sidebar nav ul > li {
-  padding: 16px 24px;
- margin-left: 20px;
+  padding: 16px 0px;
+ margin-left: 10px;
   font-weight: 500;
   cursor: pointer;
   font-size: 0.9rem;
@@ -112,7 +120,7 @@ hr {
 
 .sidebar nav ul > li ul {
   list-style: lower-alpha;
-  padding-left: 20px;
+  padding-left: 50px;
   
   margin-top: 8px;
 }
